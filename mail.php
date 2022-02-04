@@ -25,14 +25,14 @@
 
 	if(isset($_SESSION['login'])){
 
-			echo "<br><a href='menu.php" . SID . "'>";
-			echo "<input type=button name=cofanie value=cofnij></a>";
+		echo "<br><a href='menu.php" . SID . "'>";
+		echo "<input type=button name=cofanie value=cofnij></a>";
 		
 	}
-			else{
-					echo "<script>alert('zaloguj sie chuliganie')</script>";
-					header("Location: login.php");
-}
+	else{
+		echo "<script>alert('zaloguj sie chuliganie')</script>";
+		header("Location: login.php");
+	}
 
 ?>
 
