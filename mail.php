@@ -25,13 +25,13 @@
 
 	if(isset($_SESSION['login'])){
 
-		echo "<br><a href='menu.php" . SID . "'>";
-		echo "<input type=button name=cofanie value=cofnij></a>";
-	
-}
-		else{
-			echo "<script>alert('zaloguj sie chuliganie')</script>";
-			header("Location: login.php");
+			echo "<br><a href='menu.php" . SID . "'>";
+			echo "<input type=button name=cofanie value=cofnij></a>";
+		
+	}
+			else{
+					echo "<script>alert('zaloguj sie chuliganie')</script>";
+					header("Location: login.php");
 }
 
 ?>
@@ -43,38 +43,38 @@
 
 if (isset($_POST["submit1"])) {
 	
-require_once('phpmailer/PHPMailerAutoload.php'); 
+	require_once('phpmailer/PHPMailerAutoload.php'); 
 
-$mail = new PHPMailer;
-$mail->CharSet = "UTF-8";
+	$mail = new PHPMailer;
+	$mail->CharSet = "UTF-8";
 
-$name = $_POST['od'];
-$temat = $_POST['temat'];
-$msg = $_POST['msg'];
+	$name = $_POST['od'];
+	$temat = $_POST['temat'];
+	$msg = $_POST['msg'];
 
-$mail->IsSMTP();
-$mail->Host = 'smtp.gmail.com'; 
-$mail->Port = 465; 
-$mail->SMTPAuth = true; 
-$mail->Username = ""; 
-$mail->Password = ""; 
-$mail->SMTPSecure = 'ssl';
-
-
-$mail->FromName =$name; 
-$mail->AddAddress($_POST['email']); 
-
-$mail->IsHTML(true); 
-$mail->Subject =$temat;
-$mail->Body=$msg;
-$mail->AltBody = 'Plaint text e-mail body / Treść wiadomości jako tekst';
+	$mail->IsSMTP();
+	$mail->Host = 'smtp.gmail.com'; 
+	$mail->Port = 465; 
+	$mail->SMTPAuth = true; 
+	$mail->Username = ""; 
+	$mail->Password = ""; 
+	$mail->SMTPSecure = 'ssl';
 
 
-$mail->send();
-	echo 'udało  sie';
-	
-}
-exit;
+	$mail->FromName =$name; 
+	$mail->AddAddress($_POST['email']); 
+
+	$mail->IsHTML(true); 
+	$mail->Subject =$temat;
+	$mail->Body=$msg;
+	$mail->AltBody = 'Plaint text e-mail body / Treść wiadomości jako tekst';
+
+
+	$mail->send();
+		echo 'udało  sie';
+		
+	}
+
 ?>
 
 </body>
