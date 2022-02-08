@@ -26,7 +26,7 @@
          
         
          
-        //Zapamiętaj wprowadzone dane
+        
         $user=$_POST['user'];
         $passwd=$_POST['passwd'];
         $email=$_POST['email'];
@@ -46,7 +46,7 @@
                  
                 if ($wszystko_OK==true)
                 {
-                    //Hurra, wszystkie testy zaliczone, dodajemy gracza do bazy
+                    
                      
                     if ($polaczenie->query("INSERT INTO users VALUES (NULL, '$user', '$passwd', '$email', '$date')"))
                     {
