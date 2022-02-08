@@ -17,24 +17,11 @@
 			<input name="od" type="text" placeholder="Od kogo"><br>
 			<button type="submit" name="submit1" >wyslij</button>
 			<input type="reset" value="reset">
-
+			<a href="login.php">
+				<input type="button" name="wyloguj" value="wyloguj">
 		</form>
 	</main>
-<?php
-	session_start();
 
-	if(isset($_SESSION['login'])){
-
-		echo "<br><a href='menu.php" . SID . "'>";
-		echo "<input type=button name=cofanie value=cofnij></a>";
-		
-	}
-	else{
-		echo "<script>alert('zaloguj sie chuliganie')</script>";
-		header("Location: login.php");
-	}
-
-?>
 
 
 
