@@ -6,19 +6,21 @@
 <body>
 	<main>
 		<form
-			id="formularz" 
+			id="form" 
 			method="POST" 
 			action="mail.php"
 			autocomplete="off">
 
-			<input name="temat" type="text" placeholder="Temat"><br>
+			<input name="title" type="text" placeholder="Temat"><br>
 			<input name="msg" type="text" placeholder="Wiadomość"><br>
 			<input name="email" type="text" placeholder="E-mail"><br>
-			<input name="od" type="text" placeholder="Od kogo"><br>
+			<input name="from" type="text" placeholder="Od kogo"><br>
 			<button type="submit" name="submit1" >wyslij</button>
 			<input type="reset" value="reset">
-			<a href="login.php">
-				<input type="button" name="wyloguj" value="wyloguj">
+			<label>
+				<a href="login.php">
+					<input type="button" name="logOut" value="wyloguj">
+			</label>	
 		</form>
 	</main>
 
@@ -35,8 +37,8 @@ if (isset($_POST["submit1"])) {
 	$mail = new PHPMailer;
 	$mail->CharSet = "UTF-8";
 
-	$name = $_POST['od'];
-	$temat = $_POST['temat'];
+	$from = $_POST['from'];
+	$temat = $_POST['title'];
 	$msg = $_POST['msg'];
 
 	$mail->IsSMTP();
@@ -48,11 +50,11 @@ if (isset($_POST["submit1"])) {
 	$mail->SMTPSecure = 'ssl';
 
 
-	$mail->FromName =$name; 
+	$mail->FromName =$from; 
 	$mail->AddAddress($_POST['email']); 
 
 	$mail->IsHTML(true); 
-	$mail->Subject =$temat;
+	$mail->Subject =$title;
 	$mail->Body=$msg;
 	$mail->AltBody = 'Plaint text e-mail body / Treść wiadomości jako tekst';
 

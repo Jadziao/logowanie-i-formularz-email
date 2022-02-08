@@ -22,13 +22,13 @@
     if (isset($_POST['email']))
     {
         
-        $wszystko_OK=true;
+        $OK=true;
          
         
          
         
         $user=$_POST['user'];
-        $passwd=$_POST['passwd'];
+        $passwd=md5($_POST['passwd']);
         $email=$_POST['email'];
         $date=date("Y-m-d");
         if (isset($_POST['submit'])) $_SESSION['submit'] = true;
@@ -38,30 +38,30 @@
          
         
         {
-            $polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
-            if ($polaczenie->connect_errno!=0)
+            $connect = new mysqli($host, $db_user, $db_password, $db_name);
+            if ($connect->connect_errno!=0)
             {
                 throw new Exception(mysqli_connect_errno());
             }
                  
-                if ($wszystko_OK==true)
+                if ($OK==true)
                 {
                     
                      
-                    if ($polaczenie->query("INSERT INTO users VALUES (NULL, '$user', '$passwd', '$email', '$date')"))
+                    if ($connect->query("INSERT INTO users VALUES (NULL, '$user', '$passwd', '$email', '$date')"))
                     {
-                        $_SESSION['udanareje']=true;
-                        header('Location: witamy.php');
+                        $_SESSION['okRegister']=true;
+                        header('Location: Welcome.php');
                         echo "udalo sie";
                     }
                     else
                     {
-                        throw new Exception($polaczenie->error);
+                        throw new Exception($connect->error);
                     }
                      
                 }
                  
-                $polaczenie->close();
+                $connect->close();
             }
              
         }
