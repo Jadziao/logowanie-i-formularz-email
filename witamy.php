@@ -12,7 +12,7 @@
         unset($_SESSION['udanareje']);
     }
      
-    //Usuwanie zmiennych pamiętających wartości wpisane do formularza
+   
     if (isset($_SESSION['user'])) unset($_SESSION['user']);
     if (isset($_SESSION['email'])) unset($_SESSION['email']);
     if (isset($_SESSION['passwd'])) unset($_SESSION['passwd']);
