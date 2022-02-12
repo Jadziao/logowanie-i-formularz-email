@@ -20,7 +20,11 @@
 			<label>
 				<a href="login.php">
 					<input type="button" name="logOut" value="wyloguj">
-			</label>	
+			</label>
+			<label>
+				<a href="texts.php">
+					<input type="button" name="texts" value="Teksty">
+			</label>		
 		</form>
 	</main>
 
@@ -30,39 +34,39 @@
 
 <?php
 
-if (isset($_POST["submit1"])) {
-	
-	require_once('phpmailer/PHPMailerAutoload.php'); 
-
-	$mail = new PHPMailer;
-	$mail->CharSet = "UTF-8";
-
-	$from = $_POST['from'];
-	$temat = $_POST['title'];
-	$msg = $_POST['msg'];
-
-	$mail->IsSMTP();
-	$mail->Host = 'smtp.gmail.com'; 
-	$mail->Port = 465; 
-	$mail->SMTPAuth = true; 
-	$mail->Username = ""; 
-	$mail->Password = ""; 
-	$mail->SMTPSecure = 'ssl';
-
-
-	$mail->FromName =$from; 
-	$mail->AddAddress($_POST['email']); 
-
-	$mail->IsHTML(true); 
-	$mail->Subject =$title;
-	$mail->Body=$msg;
-	$mail->AltBody = 'Plaint text e-mail body / Treść wiadomości jako tekst';
-
-
-	$mail->send();
-		echo 'udało  sie';
+	if (isset($_POST["submit1"])) {
 		
-	}
+		require_once('phpmailer/PHPMailerAutoload.php'); 
+
+		$mail = new PHPMailer;
+		$mail->CharSet = "UTF-8";
+
+		$from = $_POST['from'];
+		$temat = $_POST['title'];
+		$msg = $_POST['msg'];
+
+		$mail->IsSMTP();
+		$mail->Host = 'smtp.gmail.com'; 
+		$mail->Port = 465; 
+		$mail->SMTPAuth = true; 
+		$mail->Username = ""; 
+		$mail->Password = ""; 
+		$mail->SMTPSecure = 'ssl';
+
+
+		$mail->FromName =$from; 
+		$mail->AddAddress($_POST['email']); 
+
+		$mail->IsHTML(true); 
+		$mail->Subject =$title;
+		$mail->Body=$msg;
+		$mail->AltBody = 'Plaint text e-mail body / Treść wiadomości jako tekst';
+
+
+		$mail->send();
+			echo 'udało  sie';
+			
+		}
 
 ?>
 

@@ -19,6 +19,7 @@ else
 {
     $user = $_POST['user'];
     $passwd = $_POST['passwd'];
+    $passwd= md5($passwd);
      
     $user = htmlentities($user, ENT_QUOTES, "UTF-8");
     $passwd = htmlentities($passwd, ENT_QUOTES, "UTF-8");
