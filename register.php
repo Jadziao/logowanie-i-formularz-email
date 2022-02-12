@@ -15,6 +15,7 @@
                 <button type="submit" name="submit">Zarejestruj</button>
                 <a href="login.php">
                     <input type="button" name="login" value="login"/>
+                </a>
         </form>
         <?php
     session_start();

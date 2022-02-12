@@ -59,10 +59,7 @@
     
     if(isset($_POST['edit']))
     {
-       $hostname = "localhost";
-       $username = "root";
-       $password = "";
-       $databaseName = "baza";
+        require_once "connect.php";
        
        $connect = mysqli_connect($hostname, $username, $password, $databaseName);
        

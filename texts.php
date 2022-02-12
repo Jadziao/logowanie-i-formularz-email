@@ -8,11 +8,7 @@
         
                   
         <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "baza";
-
+            require_once "connect.php";
 
             $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -38,18 +34,22 @@
         <label>
 				<a href="text_edit.php">
 					<input type="button" name="write" value="Nowy Tekst">
+        </a>
 	    </label>
         <label>
 				<a href="edit.php">
 					<input type="button" name="edit" value="Edytuj">
+          </a>
 	    </label>		
       <label>
 				<a href="mail.php">
 					<input type="button" name="edit" value="Wyślij maila">
+        </a>
 	    </label>		
       <label>
 				<a href="login.php">
 					<input type="button" name="logOut" value="wyloguj">
+        </a>
     </body>
    
 </html>

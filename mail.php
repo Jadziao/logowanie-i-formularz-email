@@ -20,10 +20,12 @@
 			<label>
 				<a href="login.php">
 					<input type="button" name="logOut" value="wyloguj">
+				</a>
 			</label>
 			<label>
 				<a href="texts.php">
 					<input type="button" name="texts" value="Teksty">
+				</a>
 			</label>		
 		</form>
 	</main>

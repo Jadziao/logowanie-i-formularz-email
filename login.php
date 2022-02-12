@@ -21,6 +21,7 @@
                 <label>
                     <a href="register.php">
                         <input type="button" name="register" value="register"/>
+                    </a>
                 </label>
         </form>
 
